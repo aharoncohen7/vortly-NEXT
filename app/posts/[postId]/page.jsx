@@ -1,4 +1,5 @@
 import React from 'react'
+import { notFound } from 'next/navigation'
 
 export const generateStaticParams = async () => {
    const res = await fetch(`https://jsonplaceholder.typicode.com/posts`)
@@ -10,6 +11,11 @@ export const generateStaticParams = async () => {
 export default async function Page({ params }) {
    const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${params.postId}`)
    const post = await res.json()
+   if (!post) {
+      notFound()
+   }
+
+   
 
    return (
       <div>

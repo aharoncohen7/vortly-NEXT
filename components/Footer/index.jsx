@@ -9,10 +9,10 @@ const linksList = [
    { href: '/airbnb', text: 'Airbnb' },
 ]
 
-export default function Header() {
+export default function Footer() {
 
    return (
-      <header className='h-24 bg-slate-400 flex gap-4 items-center py-5'>
+      <header className='vh-10 bg-pink-400 flex gap-4 items-center py-5'>
          {linksList.map((link) => (
             <Navlink key={link.href} href={link.href}>{link.text}</Navlink>
          ))}

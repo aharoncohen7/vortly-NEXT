@@ -1,31 +1,9 @@
 import mongoose,{ connect } from "mongoose";
 
-
-
-
- 
-
-   
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// פונקציית חיבור למונגו
 export const connectToMongo = async () => {
    try {
+      // אם כבר קיים חיבור למונגו - לא יוצר חיבור חדש
       if (mongoose.connection.readyState === 1) {
          console.log('already connected');
          return;
