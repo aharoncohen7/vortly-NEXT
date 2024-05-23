@@ -11,7 +11,6 @@ export const GET = async (req, { params }) => {
       console.log(error);
    }
     }
-git 
 
 export const PUT = async (req, { params }) => {
 try {

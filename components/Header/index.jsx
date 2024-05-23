@@ -7,12 +7,13 @@ const linksList = [
    { href: '/admin/dashboard', text: 'Dashboard' },
    { href: '/posts', text: 'Posts' },
    { href: '/airbnb', text: 'Airbnb' },
+   { href: '/new-post', text: 'New vort' },
 ]
 
 export default function Header() {
 
    return (
-      <header className='h-24 bg-slate-400 flex gap-4 items-center py-5'>
+      <header className='h-[80px] bg-slate-400 flex gap-4 items-center py-5'>
          {linksList.map((link) => (
             <Navlink key={link.href} href={link.href}>{link.text}</Navlink>
          ))}

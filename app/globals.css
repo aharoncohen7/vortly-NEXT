@@ -1,3 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Kumbh Sans", sans-serif;
+    user-select: none;
+    
+}
+.body{
+    
+    
+}
+
+
+main{
+    min-height: calc(100vh - 80px - 120px);
+}
+a, input, select, button {
+  font: inherit;
+  border: 'none';
+}
+
+a{
+  text-decoration: none;
+  /* color: inherit; */
+  color: var(--primary-color);
+}
+
+ul, li{
+  list-style: none;
+}
+
+/* p{
+
+  text-transform: capitalize;
+} */
+
+span::first-letter {
+  text-transform: uppercase;
+}
+
+:root{
+  --title-color: #071232;
+  --text-color: #8191A9;
+  --primary-color: #00A389;
+  --gray-bg-color: #9b9b9b;
+  --lightGray-bg-color: #e7e8e57f;
+  --textGrey: rgb(173, 172, 172);
+  --lightGreen-bg-color: #c6ebe4;
+  /* background-color: #fceded; */
+}
+
+/* 
+svg:hover {
+  color: var(--primary-color);
+ 
+} */
+
