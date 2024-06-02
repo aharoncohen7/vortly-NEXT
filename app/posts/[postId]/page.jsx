@@ -27,7 +27,7 @@ export default async function Post({ params }) {
 
    // קבלת פוסטים
    const item = await axiosReqToRender({method: 'GET',body:{}, url:`posts/${params.postId}` })
-   console.log(item)
+   console.log(item.author)
   
 
    return (
@@ -66,14 +66,15 @@ export default async function Post({ params }) {
             <div className="lg:col-span-2 lg:col-start-1 lg:row-start-1 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
               <div className="lg:pr-38">
                 <div className="lg:max-w-lg mr-6 ">
-                <Navlink href={item.subtopic ?? `/home/?parasha=${item.subtopic}`}>
+                
+                <Navlink href={`/posts/parasha?search=${item.subtopic}`}>
                   <button className="ml-20   leading-7 text-indigo-800 font-bold text-xl">
                     {item.subtopic ? item.subtopic : "שם הפרשה"}
                   </button>
                   </Navlink>
                   <h2   className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">{item.title}</h2>
-                  <Navlink href={item.subtopic ?? `/home/?author=${item.userId}`}>
-                  <button  className="mt-6 text-xl font-bold leading-8 text-indigo-800"> {item.author} :מחבר</button></Navlink>
+                  <Navlink href={item.subtopic ?? `/posts/author?search=${item.userId}`}>
+                  <button  className="mt-6 text-xl font-bold leading-8 text-indigo-800"> {item.author + " :מחבר"}  </button></Navlink>
                 </div>
               </div>
              
@@ -110,6 +111,7 @@ export default async function Post({ params }) {
                   
                   </div>
                 </div>
+                
                 <div>
                   <MyRating item={item} />
                 </div>

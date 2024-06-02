@@ -165,6 +165,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 10px;
+    /* direction: rtl; */
     /* border: #1746d6 1px solid; */
   }
   

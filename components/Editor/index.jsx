@@ -220,13 +220,13 @@ const Editor = ({ setResetKey, onSend }) => {
                 </div>
 
             </div>
-            <div className={styles.buttons}>
+            <div className={styles.buttons} style={{direction: textDirection}}>
                 <span className={styles.sendButton}>< FaFile /> < FaImage /></span>
                 <span className={styles.sendButton}  >
                     <MdDelete size={"22px"} onClick={handleReset} />
                     <span className={styles.sndBt} onClick={handleSendContent}>
                             <IoIosSend size={"20px"} />
-                            <span>Send</span>
+                            <span> {textDirection=="ltr"? "Send" : "שלח"}</span>
                     </span>
                 </span>
             </div>

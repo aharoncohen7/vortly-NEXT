@@ -1,3 +1,5 @@
+
+import { axiosReqToRender } from '@/helpers'
 import { unstable_noStore } from 'next/cache'
 import { cookies, headers } from 'next/headers'
 // import { UserContext } from '@/app/UserContext'
@@ -23,32 +25,8 @@ export default async function Posts() {
      // const date = new Date().toISOString().slice(0, 19)
 
   // קבלת פוסטים
-   const getAllPosts = async () => {
-     try {
-       const urlPosts = "https://vortly-db.onrender.com/api/posts/";
-       const requestOptions = {
-         method: 'GET',
-         headers: {
-           'Content-Type': 'application/json',
-           'authorization': "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MzcsImlzQWRtaW4iOjEsInVzZXJuYW1lIjoiYV9jb2hlbiIsInBhc3N3b3JkIjoiYWMxOTg1IiwiaWF0IjoxNzE2MzYyOTY1LCJleHAiOjE3MTYzNzQ5NjV9.pyM7woorPxi2tLqsp19i_qMR7xEzpzSZy0UNmPiPICo"
-         },
-       };
-       const response = await fetch(urlPosts, requestOptions);
-       if (!response.ok) {
-         if (response.status == 401) {
-           console.log("failed to fetch posts");
-         }
-         console.log("Network response was not ok!")
-         throw new Error(`Network response was not ok! status: ${response.status}`);
-       }
-       const data = await response.json();
-       return data
-     } catch (error) {
-       console.error("Error fetching posts:", error);
-     }
-   };
-   const posts =  await getAllPosts();
-   console.log(posts);
+  const posts = await axiosReqToRender({method: 'GET',body:{}, url:`/posts` })
+  console.log(posts);
  
 
 

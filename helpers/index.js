@@ -1,6 +1,6 @@
 import axios from "axios"
  const token = 
-"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MzcsImlzQWRtaW4iOjEsInVzZXJuYW1lIjoiYV9jb2hlbiIsInBhc3N3b3JkIjoiYWMxOTg1IiwiaWF0IjoxNzE2NDUwODY2LCJleHAiOjE3MTY0NjI4NjZ9.fnZXZb5C2Z_HYgUujhLWuQtAHfi15OxU4moG9UmVDIA"
+"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MzcsImlzQWRtaW4iOjEsInVzZXJuYW1lIjoiYV9jb2hlbiIsInBhc3N3b3JkIjoiYWMxOTg1IiwiaWF0IjoxNzE3MzE1MjMzLCJleHAiOjE3MTczMjcyMzN9.r61dH7cGArIf7f7smMBB5cuKQ5mQZfG9dzDlhuckDmA"
 // בקשת שרת גנרית
 export const axiosReqToRender = async ({ method = 'POST', body, url }) => {
     try {
